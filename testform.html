@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Free Consultation Form</title>
+    <style>
+        /* Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, green, yellow);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Logo Styling */
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 80px;
+            height: auto;
+            max-width: 100%; /* Ensure the image resizes for smaller screens */
+        }
+
+        /* Form Styling */
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+        }
+
+        label, input, button {
+            font-size: 14px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin: 5px 0;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        /* Submit Button */
+        button {
+            background: green;
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: darkgreen;
+        }
+
+        /* Media Query for Mobile Screens */
+        @media (max-width: 768px) {
+            .logo {
+                top: 5px;
+                left: 5px;
+                width: 60px; /* Smaller logo for smaller screens */
+            }
+
+            form {
+                width: 90%; /* Reduce form width to fit smaller screens */
+                padding: 15px; /* Adjust padding */
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            p, label, input, button {
+                font-size: 12px;
+            }
+
+            button {
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Company Logo -->
+    <img src="images.jpeg" alt="Company Logo" class="logo" />
+
+    <form id="form" action="https://docs.google.com/forms/d/e/1FAIpQLSc4PdxzOU50hyCCDi-ePfJOOjal5u19Qv8z-uTXD_NqkjLu-A/formResponse?usp=pp_url&" method="post">
+        <h2>Free Consultation</h2>
+        <p>At Running Name LLC, we specialize in helping small businesses and non-profits thrive with tailored marketing strategies and robust cybersecurity solutions. Complete this form to receive a free 30-minute consultation where we'll discuss your needs and how we can support your goals. Let's take your organization to the next level!</p>
+        <p> Learn more @ <a href="https://www.runningname.com/"> Runningname.com</a> </p>
+        <input type="text" name="entry.1982701024" placeholder="Name" />
+        <input type="text" name="entry.1206781032" placeholder="Company Name" />
+        <input type="text" name="entry.1302062020" placeholder="Phone" />
+        <input type="text" name="entry.1170775547" placeholder="Email" />
+
+        <!-- Checkbox Question -->
+        <div>
+            <p>Interest</p>
+            <label><input type="checkbox" name="entry.505801752[]" value="Web Design" /> Web Design</label>
+            <label><input type="checkbox" name="entry.505801752[]" value="Social Media Marketing" /> Social Media Marketing</label>
+            <label><input type="checkbox" name="entry.505801752[]" value="Podcast Development" /> Podcast Development</label>
+            <label><input type="checkbox" name="entry.505801752[]" value="Newsletters" /> Newsletters</label>
+            <label><input type="checkbox" name="entry.505801752[]" value="Conferences and Events" /> Conferences and Events</label>
+            <label><input type="checkbox" name="entry.505801752[]" value="Crowdstrike's EDR/Antivirus Solutions" /> Crowdstrike's EDR/Antivirus Solutions</label>
+            <label><input type="checkbox" name="entry.505801752[]" value="Penetration Test" /> Penetration Test</label>
+            <label><input type="checkbox" name="entry.505801752[]" value="IT Modernization" /> IT Modernization</label>
+            <label><input type="checkbox" name="entry.505801752[]" value="Drone Footage" /> Drone Footage</label>
+            <label>
+                <input type="checkbox" name="entry.505801752[]" value="Other" id="other-checkbox" /> Other
+            </label>
+            <input type="text" id="other-text" name="entry.505801752[]" placeholder="Please specify" style="display: none;" />
+        </div>
+        
+        <input type="text" name="entry.155954724" placeholder="Questions | Comments | Concerns" />
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const otherCheckbox = document.getElementById('other-checkbox');
+        const otherText = document.getElementById('other-text');
+
+        otherCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                otherText.style.display = 'block';
+            } else {
+                otherText.style.display = 'none';
+                otherText.value = ''; // Clear the input when unchecked
+            }
+        });
+    </script>
+</body>
+</html>
